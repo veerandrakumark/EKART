@@ -27,8 +27,8 @@ public class UserRespository extends JpaRepository<User, Long> { //JpaRepository
     //Custom query using @Query annotation
     //If more than 3 words exists we have to use @Query annotation to define our own query.
     //each user is considered as u... 
-    //first row is u, u.username andha row la iruka username
-    @Query("SELECT u FROM User u WHERE u.username =?1 OR u.email = ?2")  
+    //first row is u, u.username is the  username present in that row
+    @Query("SELECT u FROM User u WHERE u.username =?1 OR u.email = ?2") //  
     Optional<User> findByUsernameOrEmail(String username,String email); //It will search for user by username or email
 
 }
